@@ -1,0 +1,22 @@
+{
+  "name": "eatchat",
+  "version": "1.0.0",
+  "description": "food app",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1Mohitpl/EatChat.git"
+  },
+  "author": "Mohit Paul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1Mohitpl/EatChat/issues"
+  },
+  "homepage": "https://github.com/1Mohitpl/EatChat#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
