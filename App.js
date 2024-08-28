@@ -1,38 +1,50 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import logo from './imgs/applogo.png';
 
-const heading = React.createElement(
-    "h1",
-    {
-        id: "title",
-        key:"h1",
-    },
-     "Heading 1 for parcel"
+const Title = () => (
+  <a href="/">
+    <img 
+  className="logo" 
+       src={logo}/>
+</a>
 );
 
-console.log(heading);
 
-const heading2 = React.createElement(
-    "h2",
-    {
-        id: "title",
-        key:"h2",
 
-    }, 
-    "Heading 2"
+const Header = () => (
+  <div className="header">
+    <Title />
+    <div className="nave-items">
+      <ul>
+        <li>Home</li>
+        <li>Contact</li>
+        <li>About</li>
+        <li>Cart</li>
+        <li>careers</li>
+      </ul>
+    </div>
+  </div>
 );
 
-const container = React.createElement(
-    "div",
-    {
-        id: "container",
-        
-    },
-    [heading, heading2]
-);
+const Body = () => {
+  return <h4>Body</h4>;
+};
 
-console.log(heading);
+const Footer = () => {
+  return <h4>Footer</h4>;
+};
+
+const AppLayout = () => {
+  return (
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(container);
+root.render(<AppLayout />);

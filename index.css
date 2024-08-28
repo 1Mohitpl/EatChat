@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  background-color: #fde68a;
+}
+
+.nave-items ul {
+  list-style-type: none;
+  display: flex;
+}
+.nave-items ul li {
+  padding: 10px;
+}
+
+.logo {
+  width: 100px;
+  display: flex;
+}
