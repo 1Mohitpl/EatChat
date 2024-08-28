@@ -17,3 +17,14 @@
   width: 100px;
   display: flex;
 }
+
+.card{
+     width: 200px;
+     border: 1px solid rebeccapurple;
+     padding: 10px;
+     margin:  10px;
+}
+
+.card img{
+     width: 100%;
+}

@@ -27,8 +27,24 @@ const Header = () => (
   </div>
 );
 
+
+const RestrauntCard = () => {
+     return (
+     <div className="card">
+     <img  src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/6/13/3c643624-5dd2-4bc4-814c-7ae12f237bda_276763.JPG"/>
+     <h2>Kwality walls ice-cream</h2>
+     <h3>Mahanbati</h3>
+     <h4>4.7 stars </h4>
+     </div>
+  );
+};
+
 const Body = () => {
-  return <h4>Body</h4>;
+  return (
+       <div>
+          <RestrauntCard />
+       </div>
+  );
 };
 
 const Footer = () => {
