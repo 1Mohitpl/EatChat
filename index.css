@@ -15,10 +15,11 @@
 
 .logo {
   width: 100px;
-  display: flex;
+
 }
 
 .card{
+     position: relative;
      width: 200px;
      border: 1px solid rebeccapurple;
      padding: 10px;
@@ -26,5 +27,11 @@
 }
 
 .card img{
-     width: 100%; 
+     width: 100%;
+}
+
+.Restraulist{
+  display: flex;
+  flex-wrap: wrap;
+  
 }
