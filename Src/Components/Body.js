@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function filterData(searchText,restraurants) {
 
-    const result =  restraurants.filter((restaurant) => restaurant.info.name.includes(searchText));
+    const result =  restraurants.filter((abc) => abc.info.name.includes(searchText));
      return result;
   }
 
