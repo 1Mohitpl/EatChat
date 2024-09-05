@@ -8,12 +8,12 @@ const Title = () => (
   );
   const Header = () => {
     // let title = "Eat&chat";
-    const [title, setTitle] = useState("Eat&Chat");
+    // const [title, setTitle] = useState("Eat&Chat");
     return (
     <div className="header">
       <Title />
-     <h1> {title}</h1>
-     <button onClick={() => setTitle("foodVila" )}>click</button>
+     {/* <h1> {title}</h1>
+     <button onClick={() => setTitle("foodVila" )}>click</button> */}
       <div className="nave-items">
         <ul>
           <li>Home</li>
