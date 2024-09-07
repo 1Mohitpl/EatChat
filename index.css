@@ -14,12 +14,12 @@
 }
 
 .logo {
-  width: 100px;
+  width: 80px;
 
 }
 
 .card{
-     width: 200px;
+     width: 150px;
      border: 2px solid black;
      padding: 10px;
      margin:  10px;
@@ -33,7 +33,4 @@
 .Restraulist{
   display: flex;
   flex-wrap: wrap;
-
-  
-  
 }

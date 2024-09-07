@@ -5,8 +5,7 @@ const RestaurantCard = ({
   name,
   locality,
   areaName,
-  costForTwo,
-  cuisines,                                        
+  costForTwo,                                        
   totalRatingsString,   
   avgRating,  
 }) => {
@@ -15,7 +14,6 @@ const RestaurantCard = ({
       <img src= {img_cdn_url +
     cloudinaryImageId}/>
       <h2>{name}</h2>
-      <h5>{cuisines}</h5>
       <h6>{areaName}</h6>
       <span>
         <h4>

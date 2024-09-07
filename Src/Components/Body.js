@@ -1,6 +1,7 @@
 import { RestraurentList } from "../config";
 import RestaurantCard from "./RestraurantCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./shimmer";
 
 
 function filterData(searchText,restraurants) {
@@ -12,9 +13,34 @@ function filterData(searchText,restraurants) {
 const Body = () => {
     // const searchTxt = "kfc"  // this is how created varibale in normla javascript it is hardcoded value,
     // seachText is a local varivable 
-    const [restraurants, setRestraurants] = useState(RestraurentList);
+    const [allRestaurants, setallRestaurants] = useState([]);
+    const [filteredRestaurants, setfilteredRestaurants] = useState([]);
     const [searchText, setSearchText] = useState(""); // to create state variable
-    return (
+
+    useEffect(()=>{
+     //api
+     getRestraurants();
+    }, []);
+
+    async function getRestraurants() {
+       const data = await fetch ("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+       const json = await data.json();
+       console.log(json);
+       //optional chaining
+       setallRestaurants(json?.data?.cards[2]?.card?.card?.
+        gridElements?.infoWithStyle?.restaurants);
+
+        setfilteredRestaurants(json?.data?.cards[2]?.card?.card?.
+          gridElements?.infoWithStyle?.restaurants);
+};
+  
+if(!allRestaurants) 
+  return <>
+       <h1>No data</h1>
+  </>
+
+
+ return allRestaurants?.length === 0 ? <Shimmer /> : (
         <>
       <div className="search-container"> 
        <input type="text" className="search-input"
@@ -28,8 +54,8 @@ const Body = () => {
         <button className="search"
         onClick={()=>{
             // need to filter the data form data
-            const data = filterData(searchText,restraurants);
-            setRestraurants(data);
+            const data = filterData(searchText, allRestaurants);
+            setfilteredRestaurants(data);
         }}
         >Search</button>
     
@@ -37,7 +63,7 @@ const Body = () => {
 
      
        <div className="Restraulist">
-       {restraurants.map((Restraurent)=>{
+       {filteredRestaurants.map((Restraurent)=>{
          return <RestaurantCard {...Restraurent.info} key={Restraurent.info.id}/>
        })}
        </div>
