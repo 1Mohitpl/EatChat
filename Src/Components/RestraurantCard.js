@@ -13,11 +13,11 @@ const RestaurantCard = ({
     <div className="card">
       <img src= {img_cdn_url +
     cloudinaryImageId}/>
-      <h2>{name}</h2>
-      <h6>{areaName}</h6>
+      <h3>{name}</h3>
+      <h4>{areaName}</h4>
       <span>
         <h4>
-          <i className="fa-solid fa-star"></i>
+          {/* <i className="fa-solid"></i> */}
           {avgRating}
         </h4>
         <h4>{totalRatingsString}</h4>

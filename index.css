@@ -19,18 +19,27 @@
 }
 
 .card{
+  
      width: 150px;
+     max-height:min-content;
      border: 2px solid black;
      padding: 10px;
      margin:  10px;
      background-color: aquamarine;
 }
 
-.card img{
+.card > img{
      width: 100%;
 }
 
 .Restraulist{
   display: flex;
   flex-wrap: wrap;
+}
+
+.shimmerUI{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(128, 131, 133);
+    margin: 20px;
 }

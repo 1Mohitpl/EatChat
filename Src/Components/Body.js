@@ -6,7 +6,7 @@ import Shimmer from "./shimmer";
 
 function filterData(searchText,restraurants) {
 
-    const result =  restraurants.filter((abc) => abc.info.name.includes(searchText));
+    const result =  restraurants.filter((rastaurant) => rastaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
      return result;
   }
 
@@ -35,12 +35,12 @@ const Body = () => {
 };
   
 if(!allRestaurants) 
-  return <>
-       <h1>No data</h1>
-  </>
+  return null;
+// if(filteredRestaurants?.length === 0) return (
+//   <h1>No records</h1>
+// )
 
-
- return allRestaurants?.length === 0 ? <Shimmer /> : (
+ return allRestaurants?.length === 0 ?( <Shimmer /> ): (
         <>
       <div className="search-container"> 
        <input type="text" className="search-input"
