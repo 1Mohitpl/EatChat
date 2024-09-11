@@ -2,6 +2,9 @@ import { RestraurentList } from "../config";
 import RestaurantCard from "./RestraurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmer";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 
 function filterData(searchText,restraurants) {
@@ -27,10 +30,10 @@ const Body = () => {
        const json = await data.json();
        console.log(json);
        //optional chaining
-       setallRestaurants(json?.data?.cards[2]?.card?.card?.
+       setallRestaurants(json?.data?.cards[1]?.card?.card?.
         gridElements?.infoWithStyle?.restaurants);
 
-        setfilteredRestaurants(json?.data?.cards[2]?.card?.card?.
+        setfilteredRestaurants(json?.data?.cards[1]?.card?.card?.
           gridElements?.infoWithStyle?.restaurants);
 };
   
@@ -51,20 +54,25 @@ if(!allRestaurants)
              
          }}
        ></input>
-        <button className="search"
+        <button  className="search-btn"
         onClick={()=>{
             // need to filter the data form data
             const data = filterData(searchText, allRestaurants);
             setfilteredRestaurants(data);
         }}
-        >Search</button>
+         
+        ><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
     
       </div>
 
      
        <div className="Restraulist">
        {filteredRestaurants.map((Restraurent)=>{
-         return <RestaurantCard {...Restraurent.info} key={Restraurent.info.id}/>
+         return (
+         <Link to={"/restaurant/" + Restraurent.info.id} key={Restraurent.info.id}>
+         <RestaurantCard {...Restraurent.info}/>
+         </Link>
+         )
        })}
        </div>
        </>
@@ -73,6 +81,7 @@ if(!allRestaurants)
    };
 
    export default Body;
+
 
 
    

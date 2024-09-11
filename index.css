@@ -1,45 +1,221 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9fafb; /* Light background for contrast */
+  color: #46ae27;
+  line-height: 1.6;
+}
+
+/* Header Section */
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
-  background-color: #fde68a;
+  padding: 15px 30px;
+  border-bottom: 2px solid #ddd;
+  background-color: rgb(255 237 213);/* Sleek blue tone */
+  box-shadow: 0px 4px 10px rgba(3, 34, 101, 0.05); /* Softer shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* .header:hover {
+  background-color: #2563eb;                    
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);     
+} */
 
 .nave-items ul {
   list-style-type: none;
   display: flex;
+  gap: 15px; /* Adds space between nav items */
 }
+
 .nave-items ul li {
-  padding: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  color: black;
+  font-weight: 500;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nave-items ul li:hover {
+  transform: scale(1.1);
+  color: #9a4141; /* Golden hover color */
 }
 
 .logo {
-  width: 80px;
-
+  width: 90px;
+  height: auto;
 }
 
-.card{
-  
-     width: 150px;
-     max-height:min-content;
-     border: 2px solid black;
-     padding: 10px;
-     margin:  10px;
-     background-color: aquamarine;
+/* Card Section */
+.card {
+  width: 230px;
+  margin: 20px;
+  border: 1px solid #e5e7eb;
+  padding: 15px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #f97316, #fdba74); /* Gradient for modern touch */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
 }
 
-.card > img{
-     width: 100%;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1); /* Elevated shadow on hover */
 }
 
-.Restraulist{
+.card > img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card > img:hover {
+  transform: scale(1.03); /* Subtle zoom */
+  box-shadow: 0 0 12px rgba(31, 40, 95, 0.5);
+}
+
+/* Restaurant List */
+.Restraulist {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px; /* Adds space between cards */
 }
 
-.shimmerUI{
-    width: 150px;
-    height: 150px;
-    background-color: rgb(128, 131, 133);
-    margin: 20px;
+/* Shimmer Effect for Loading State */
+.shimmerUI {
+  width: 150px;
+  height: 150px;
+  background-color: #e5e7eb;
+  margin: 20px;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% { background-color: #e5e7eb; }
+  50% { background-color: #f3f4f6; }
+  100% { background-color: #e5e7eb; }
+}
+
+/* Restaurant Info */
+.restauinfo {
+  width: 230px;
+  margin: 20px;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  background-color: #f97316;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.restauinfo:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.name {
+  font-size: 22px;
+  color: #111827;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Restaurant Image */
+.restauimage {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll Animation */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hides scrollbar */
+}
+
+.scroll-item {
+  scroll-snap-align: start;
+  flex: none;
+  width: 200px;
+  margin: 0 20px;
+  transition: transform 0.5s ease;
+}
+
+.scroll-item:hover {
+  transform: scale(1.1); /* Slight zoom */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Shadow for focus */
+}
+
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  position: relative;
+  width: 300px;
+}
+
+.search-input {
+  width: 250px;
+  padding: 12px 20px 12px 40px;
+  border-radius: 30px;
+  border: 2px solid #6366f1;
+  outline: none;
+  transition: width 0.4s ease-in-out, box-shadow 0.3s ease;
+  background-color: #f3f4f6;
+  font-size: 16px;
+  color: #111827;
+}
+
+.search-input:focus {
+  width: 320px;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+.search-btn {
+  position: absolute;
+  left: 10px;
+  border: none;
+  background: none;
+  color: #6366f1;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.search-input::placeholder {
+  color: #6b7280;
+  opacity: 0.7;
 }

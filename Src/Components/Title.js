@@ -1,15 +1,13 @@
 import logo from "/imgs/applogo.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-
-const loggedInUser = () =>{
-  return false;
-}
 
 const Title = () => (
-    <a href="/">
+  <a href="/">
       <img className="logo" src={logo} />
     </a>
+  
   );
   const Header = () => {
     // let title = "Eat&chat";
@@ -17,14 +15,24 @@ const Title = () => (
     const [islogin, setlogin] = useState(false);
     return (
     <div className="header">
+      <h3>Eat&chat</h3>
       <Title />
      {/* <h1> {title}</h1>
      <button onClick={() => setTitle("foodVila" )}>click</button> */}
       <div className="nave-items">
         <ul>
-          <li>Home</li>
-          <li>Contact</li>
-          <li>About</li>
+
+        <Link to= "/">
+        <li>Home</li>
+         </Link>
+         <Link to= "/Contact">
+           <li>Contact</li>
+
+         </Link>
+          
+         <Link to ="/about">
+         <li>About</li>
+         </Link>
           <li>Cart</li>
           <li>careers</li>
         </ul>
