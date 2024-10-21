@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Title = () => (
   <a href="/">
-      <img className="logo" src={logo} />
+      <img className="logo" src="https://themes.muffingroup.com/be/recipes3/wp-content/uploads/2022/12/berecipes3.svg" />
     </a>
   
   );
@@ -15,7 +15,7 @@ const Title = () => (
     const [islogin, setlogin] = useState(false);
     return (
     <div className="header">
-      <h3>Eat&chat</h3>
+      {/* <h3>Eat&chat</h3> */}
       <Title />
      {/* <h1> {title}</h1>
      <button onClick={() => setTitle("foodVila" )}>click</button> */}
@@ -37,10 +37,11 @@ const Title = () => (
           <li>careers</li>
         </ul>
       </div>
-     {
-        islogin? <button onClick={() => setlogin(false)}>Signout</button> : 
-        <button  onClick={() => setlogin(true)}>LogIn</button>
+     <div className="log-btn">
+     {islogin? <button onClick={() => setlogin(false)}>Signout</button> : 
+     <button  onClick={() => setlogin(true)}>LogIn</button>
      }
+     </div>
 
      
       

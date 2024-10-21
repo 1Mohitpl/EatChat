@@ -17,15 +17,15 @@ body {
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 15px 30px;
-  border-bottom: 2px solid #ddd;
-  background-color: rgb(255 237 213);/* Sleek blue tone */
+  padding: 10px 30px;
+  border-bottom: 2px solid  white;
+  background-color: rgb(233, 236, 236);/* Sleek blue tone */
   box-shadow: 0px 4px 10px rgba(3, 34, 101, 0.05); /* Softer shadow */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* .header:hover {
-  background-color: #2563eb;                    
+  background-color: ;                    
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);     
 } */
 
@@ -44,15 +44,33 @@ body {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.nave-items ul li:hover {
+/* .nave-items ul li:hover {
   transform: scale(1.1);
-  color: #9a4141; /* Golden hover color */
-}
+  color: #1d65b7; 
+} */
 
 .logo {
-  width: 90px;
+  width: 100px;
   height: auto;
+  
 }
+
+.log-btn button{
+    width: 100px;
+    font-size: medium;
+    height: auto;
+    border-radius: 20px;
+    color: rgb(104, 85, 224);
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(104, 85, 224, 1);
+    transition: 0.4s;
+}
+button:hover {
+  color: black;
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+  background-color: rgba(104, 85, 224, 1);
+}
+
 
 /* Card Section */
 .card {
@@ -182,37 +200,44 @@ html {
 .search-container {
   display: flex;
   justify-content: center;
+  margin: 20px;
   align-items: center;
   margin-top: 50px;
   position: relative;
-  width: 300px;
+  width: 400px; /* Increased width for better spacing */
 }
 
 .search-input {
-  width: 250px;
-  padding: 12px 20px 12px 40px;
-  border-radius: 30px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 30px 0 0 30px; /* Rounded left side only */
   border: 2px solid #6366f1;
   outline: none;
   transition: width 0.4s ease-in-out, box-shadow 0.3s ease;
   background-color: #f3f4f6;
   font-size: 16px;
   color: #111827;
+  border-right: none; /* Remove border on right to attach the button */
 }
 
 .search-input:focus {
-  width: 320px;
   box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
 }
 
 .search-btn {
-  position: absolute;
-  left: 10px;
   border: none;
-  background: none;
-  color: #6366f1;
+  background-color: #6366f1; /* Button color */
+  color: white;
   font-size: 18px;
+  padding: 12px 20px;
   cursor: pointer;
+  border-radius: 0 30px 30px 0; /* Rounded right side */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: #4f46e5; /* Slightly darker color on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
 }
 
 .search-input::placeholder {
