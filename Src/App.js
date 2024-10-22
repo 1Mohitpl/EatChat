@@ -41,7 +41,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:resid", // lowercase path
         element: <RestauFood />,
-      },
+      },    
     ],
   },
 ]);

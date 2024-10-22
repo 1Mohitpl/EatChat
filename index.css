@@ -244,3 +244,8 @@ html {
   color: #6b7280;
   opacity: 0.7;
 }
+
+.error img{
+   width: 100vw;
+   height: auto;
+}

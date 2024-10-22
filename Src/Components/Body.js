@@ -37,8 +37,8 @@ const Body = () => {
           gridElements?.infoWithStyle?.restaurants);
 };
   
-if(!allRestaurants) 
-  return null;
+// if(!allRestaurants) 
+//   return null;
 // if(filteredRestaurants?.length === 0) return (
 //   <h1>No records</h1>
 // )
