@@ -33,7 +33,10 @@ const Title = () => (
          <Link to ="/about">
          <li>About</li>
          </Link>
-          <li>Cart</li>
+         <Link to="/cart">
+         <li>Cart</li>
+         </Link>
+         
           <li>careers</li>
         </ul>
       </div>
