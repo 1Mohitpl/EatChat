@@ -9,6 +9,7 @@ import Cart from "./Components/Cart";
 import Error from "./Components/Error";
 import Contact from "./Components/Contact";
 import RestauFood from "./Components/RestauFood";
+import Profile from "./Components/Profile";
 
 const AppLayout = () => {
   return (
@@ -29,10 +30,15 @@ const appRouter = createBrowserRouter([
       {
         path: "/", // lowercase path
         element: <Body />,
+        
       },
       {
         path: "about", // lowercase path
         element: <About />,
+        children : [{
+          path : "profile",   // parentpath/{path} locahost:123/about/profile 
+          element:<Profile />
+        }]
       },
       {
         path: "contact", // lowercase path
