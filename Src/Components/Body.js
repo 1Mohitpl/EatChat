@@ -23,6 +23,7 @@ const Body = () => {
     useEffect(()=>{
      //api
      getRestraurants();
+     
     }, []);
 
     async function getRestraurants() {

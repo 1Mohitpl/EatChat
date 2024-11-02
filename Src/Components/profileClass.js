@@ -7,8 +7,17 @@ class  Profile extends React.Component {
         count : 2,
         carNo : 34,
       };
+      console.log("child-construture" + this.props.name);
+      
+    }
+
+    componentDidMount(props){
+      console.log("child-didmouint" + this.props.name);
+      
     }
     render() {
+      console.log("child-render" + this.props.name);
+      
         const {count} = this.state;  // destruture the state varible
         return (
         <div>
