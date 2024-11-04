@@ -1,7 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const Profile  =  (props) =>{
     const [count, setCount] = useState(0);
     const [count2, setCount2] = useState(0);
+
+
+    useEffect ( () => {
+         // best place to call api
+    
+         
+
+    }, [count]);
+       
     return(
  
         <div>
