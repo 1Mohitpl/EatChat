@@ -26,7 +26,8 @@ class  Profile extends React.Component {
     }
 
     componentDidUpdate(){
-      console.log("component did mount");
+      
+      console.log("component did update");
     }
 
 

@@ -5,13 +5,10 @@ import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { filterData } from "../../utils/helper";
+import { GET_RESTAURANTS } from "../config";
 
 
-function filterData(searchText,restraurants) {
-
-    const result =  restraurants.filter((rastaurant) => rastaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-     return result;
-  }
 
 const Body = () => {
     // const searchTxt = "kfc"  // this is how created varibale in normla javascript it is hardcoded value,
@@ -27,7 +24,7 @@ const Body = () => {
     }, []);
 
     async function getRestraurants() {
-       const data = await fetch ("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+       const data = await fetch (GET_RESTAURANTS);
        const json = await data.json();
        console.log(json);
        //optional chaining
