@@ -59,8 +59,8 @@ body {
     width: 100px;
     font-size: medium;
     height: auto;
-    border-radius: 20px;
-    color: rgb(104, 85, 224);
+    border-radius: 20px;  
+    color: rgb(223, 82, 47);
     background-color: rgba(255, 255, 255, 1);
     border: 1px solid rgba(104, 85, 224, 1);
     transition: 0.4s;
@@ -68,7 +68,7 @@ body {
 button:hover {
   color: black;
   box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
-  background-color: rgba(104, 85, 224, 1);
+  background-color: rgb(66, 139, 228);
 }
 
 
@@ -248,4 +248,82 @@ html {
 .error img{
    width: 100vw;
    height: auto;
+}
+
+/* Main Career Page Styling */
+.career-page {
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #FFF7E6; /* Soft beige background */
+  text-align: center;
+}
+
+.header-section {
+  margin-bottom: 30px;
+}
+
+.hire {
+  font-size: 2.5em;
+  color: #d93f21; /* A professional, warm orange color */
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1.1em;
+  color: #555;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.contact-info {
+  font-size: 1em;
+  margin-top: 10px;
+  color: #0056b3;
+}
+
+.contact-info span {
+  font-weight: bold;
+}
+
+.job-listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Job Card Styling */
+.job-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.job-card h3 {
+  color: #333;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.apply-button {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #004080;
 }

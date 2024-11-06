@@ -11,6 +11,8 @@ import Contact from "./Components/Contact";
 import RestauFood from "./Components/RestauFood";
 import Profile from "./Components/Profile";
 import Shimmer from "./Components/shimmer";
+import Careers from "./Components/Careers";
+
 
 
 
@@ -53,6 +55,11 @@ const appRouter = createBrowserRouter([
       {
         path: "cart", // lowercase path
         element: <Cart/>,
+      },
+
+      {
+        path: "careers", // lowercase path 
+        element: < Careers/>,
       },
 
       {

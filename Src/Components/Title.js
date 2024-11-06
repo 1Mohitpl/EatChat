@@ -42,9 +42,11 @@ const Title = () => (
          <Link to="/instamart">
          <li>Instamart</li>
          </Link> 
-         
-          <li>careers</li>
-        </ul>
+
+         <Link to="/careers">
+         <li>Careers</li>
+         </Link> 
+         </ul>
       </div>
      <div className="log-btn">
         <h1>{isOnline ? "✅": "🛑"}</h1>
