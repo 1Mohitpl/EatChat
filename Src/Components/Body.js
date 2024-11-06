@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { filterData } from "../../utils/helper";
 import { GET_RESTAURANTS } from "../config";
+import useOnline from "../../utils/useOnline";
 
 
 
@@ -35,6 +36,17 @@ const Body = () => {
           gridElements?.infoWithStyle?.restaurants);
 };
   
+ const statusOnline = useOnline();
+ if(!statusOnline) {
+   return (
+      <div>
+         <span> Check your Connection !</span>
+      </div>
+   )
+  
+      
+  
+ }
 // if(!allRestaurants) 
 //   return null;
 // if(filteredRestaurants?.length === 0) return (
