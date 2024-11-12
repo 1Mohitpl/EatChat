@@ -1,4 +1,14 @@
 /* Global Styles */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+/* Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,7 +17,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f9fafb; /* Light background for contrast */
+  background-color: #bca5bd; /* Light background for contrast */
   /* color: #46ae27; */
   line-height: 1.6;
 }
@@ -19,14 +29,12 @@ body {
   justify-content: space-between;
   padding: 10px 30px;
   border-bottom: 2px solid  white;
-  background-color: rgb(233, 236, 236);/* Sleek blue tone */
-  box-shadow: 0px 4px 10px rgba(3, 34, 101, 0.05); /* Softer shadow */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgb(92, 172, 172);/* Sleek blue tone */
 }
 
 /* .header:hover {
-  background-color: ;                    
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);     
+  background-color: firebrick;                    
+  box-shadow: 0px 6px 12px rgba(110, 183, 27, 0.1);     
 } */
 
 .nave-items ul {

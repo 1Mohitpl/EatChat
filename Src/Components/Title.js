@@ -6,7 +6,7 @@ import useOnline from "../../utils/useOnline";
 
 const Title = () => (
   <a href="/">
-      <img className="logo" src="https://themes.muffingroup.com/be/recipes3/wp-content/uploads/2022/12/berecipes3.svg" />
+      <img className= "logo" src="https://themes.muffingroup.com/be/recipes3/wp-content/uploads/2022/12/berecipes3.svg" />
     </a>
   
   );
