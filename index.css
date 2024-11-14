@@ -212,8 +212,8 @@ html {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-items: center;
-  margin: 80px;
+ justify-content: center;
+  margin: 30px;
   margin-top: 50px;
   position: relative;
   width: 500px; /* Increased width for better spacing */

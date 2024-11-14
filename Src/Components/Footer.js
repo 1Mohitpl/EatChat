@@ -5,8 +5,10 @@ const Footer = () => {
   const {user} = useContext(UserContext); 
 
     return (
-      <h1 className="font-bold text-lime-800">{user.name} - 
-       {user.email}</h1>
+      
+      <h1 className="p-11 m-14 font-bold text-lime-800"> This site is developed by {user.name} -  {user.email}</h1>
+  
+      
     )
   };
 
