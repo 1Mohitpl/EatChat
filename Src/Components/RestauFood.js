@@ -18,10 +18,10 @@ const RestauFood =  () =>{
     {/* <h1>restaurantId : {resid}</h1> */}
     {restaumenu && restaumenu.cards && restaumenu.cards.length > 2 ? (
       <div className="restauinfo">
-        <h1 className="name">{restaumenu?.cards[2]?.card?.card?.info?.name}</h1>
+        <h1 className="Cardname">{restaumenu?.cards[2]?.card?.card?.info?.name}</h1>
         <img className="restauimage" src={img_cdn_url + restaumenu?.cards[2]?.card?.card?.info?.cloudinaryImageId} />
         <h3>{restaumenu.cards[2].card.card.info.areaName}</h3>
-        <h3>{restaumenu.cards[2].card.card.info.avgRating}</h3>
+        <h3 className=" font-bold p-4 text-lime-400">{restaumenu.cards[2].card.card.info.avgRating}</h3>
         <h3>{restaumenu.cards[2].card.card.info.city}</h3>
       </div>
     ) : (

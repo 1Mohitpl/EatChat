@@ -77,7 +77,7 @@ button:hover {
 }
 
 .card {
-  width: 250px;
+  width: 220px;
   margin: 20px;
   border: 1px solid #e5e7eb;
   padding: 15px;
@@ -155,14 +155,13 @@ button:hover {
   transform: translateY(-10px);
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
 }
-
-.name {
+ .Cardname {
   font-size: 22px;
-  color: #111827;
+  /* color: #111827; */
   font-weight: bold;
   text-align: center;
   margin-bottom: 15px;
-}
+} 
 
 /* Restaurant Image */
 .restauimage {
@@ -211,12 +210,13 @@ html {
 
 .search-container {
   display: flex;
-  justify-content: center;
-  margin: 20px;
+  flex-direction: row;
   align-items: center;
+  justify-items: center;
+  margin: 80px;
   margin-top: 50px;
   position: relative;
-  width: 400px; /* Increased width for better spacing */
+  width: 500px; /* Increased width for better spacing */
 }
 
 .search-input {
@@ -227,8 +227,7 @@ html {
   outline: none;
   transition: width 0.4s ease-in-out, box-shadow 0.3s ease;
   background-color: #f3f4f6;
-  font-size: 16px;
-  color: #111827;
+  font-size: 15px;
   border-right: none; /* Remove border on right to attach the button */
 }
 
@@ -238,7 +237,7 @@ html {
 
 .search-btn {
   border: none;
-  background-color: #286508; /* Button color */
+  background-color: #cc484c; /* Button color */
   color: white;
   font-size: 18px;
   padding: 12px 20px;
@@ -248,7 +247,7 @@ html {
 }
 
 .search-btn:hover {
-  background-color: rgb(140, 13, 138); /* Slightly darker color on hover */
+  background-color: rgb(40, 109, 22); /* Slightly darker color on hover */
   /* transform: scale(1.05); */
 }
 

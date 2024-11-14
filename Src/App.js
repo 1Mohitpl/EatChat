@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Title";
 import Body from "./Components/Body";
@@ -12,6 +12,7 @@ import RestauFood from "./Components/RestauFood";
 import Profile from "./Components/Profile";
 import Shimmer from "./Components/shimmer";
 import Careers from "./Components/Careers";
+import InstaFresh from "./Components/Instamart";
 
 
 
@@ -63,10 +64,10 @@ const appRouter = createBrowserRouter([
       },
 
       {
-        path: "instamart", // lowercase path
+        path: "InstaFresh", // lowercase path
         element: (  
             <Suspense fallback={<Shimmer/>}> 
-                  <Instamart />
+                  <InstaFresh />
                   </Suspense>
         ),
       }, 
