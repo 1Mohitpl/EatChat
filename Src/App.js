@@ -13,6 +13,8 @@ import Profile from "./Components/Profile";
 import Shimmer from "./Components/shimmer";
 import Careers from "./Components/Careers";
 import InstaFresh from "./Components/Instamart";
+import {Provider} from "react-redux";
+import store from "../utils/store";
 
 
 
@@ -22,11 +24,14 @@ const Instamart = lazy ( () => import ("./Components/Instamart"));   // dynamic 
 
 const AppLayout = () => {
   return (
+    <Provider store = {store}> 
     <>
       <Header />
       <Outlet />
       <Footer />
+   
     </>
+    </Provider>
   );
 };
 
