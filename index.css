@@ -338,3 +338,14 @@ html {
 .apply-button:hover {
   background-color: #004080;
 }
+
+
+.Eorror{
+font-size: 80px;
+margin: 30px;
+color: red;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}

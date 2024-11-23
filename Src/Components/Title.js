@@ -45,15 +45,16 @@ const Header = () => {
           <Link to="/about">
             <li>About</li>
           </Link>
-          <Link to="/cart">
-            <li>Cart {cartItems.length}</li>
-          </Link>
+          
           <Link to="/instaFresh">
             <li>InstaFresh</li>
           </Link>
 
           <Link to="/careers">
             <li>Careers</li>
+          </Link>
+          <Link to="/cart">
+            <li>Cart {cartItems.length}</li>
           </Link>
         </ul>
       </div>
