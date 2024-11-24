@@ -26,7 +26,7 @@ body {
   justify-content: space-between;
   padding: 10px 30px;
   border-bottom: 2px solid  white;
-  background-color: rgb(92, 172, 172);   /*Sleek blue tone*/
+  background-color: rgb(245, 242, 241);   /*Sleek blue tone*/
 }
 
 /* .header:hover {
@@ -60,20 +60,28 @@ body {
   
 }
 
+.log-btn{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
 .log-btn button{
     width: 100px;
     font-size: medium;
     height: auto;
     border-radius: 20px;  
     color: rgb(223, 82, 47);
-    background-color: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(104, 85, 224, 1);
+    background-color: #ffff;
+    border: 1px solid rgb(233, 138, 59);
     transition: 0.4s;
 }
 button:hover {
   color: black;
   box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
-  background-color: rgb(66, 139, 228);
+  background-color: rgb(223, 146, 44);
 }
 
 .card {
@@ -140,12 +148,19 @@ button:hover {
 }
 
 /* Restaurant Info */
+.menucard{
+  display: flex;
+  
+}
+
+
 .restauinfo {
-  width: 230px;
-  margin: 20px;
+  
+  color: white;
+  margin: 30px;
   border-radius: 15px;
   border: 1px solid #ddd;
-  background-color: #f97316;
+  background-color: black;
   padding: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -165,8 +180,8 @@ button:hover {
 
 /* Restaurant Image */
 .restauimage {
-  width: 100%;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   border-radius: 10px;
   object-fit: cover;
   border: 1px solid #e5e7eb;

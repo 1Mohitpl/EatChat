@@ -58,9 +58,10 @@ const Header = () => {
           </Link>
         </ul>
       </div>
+
       <div className="log-btn">
-        <h1>{isOnline ? "✅" : "🛑"}</h1>
-        <span className="p-6 font-bold text-red-600">{user.name}</span>
+            <h1>Online status : {isOnline ? "✅" : "🛑"}</h1>
+             {/* <span className="p-6 font-bold text-red-600">{user.name}</span> */}
         {islogin ? (
           <button onClick={() => setlogin(false)}>Signout</button>
         ) : (
