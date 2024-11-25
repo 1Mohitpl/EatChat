@@ -1,6 +1,6 @@
 const cart = () => {
     return (
-        <h1>cart page is here</h1>
+        <h1 className="font-bold text-3xl">cart page is here</h1>
     )
 }
 

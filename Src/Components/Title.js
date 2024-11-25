@@ -60,12 +60,12 @@ const Header = () => {
       </div>
 
       <div className="log-btn">
-            <h1>Online status : {isOnline ? "✅" : "🛑"}</h1>
+            <h1 className=" font-bold">Online status : {isOnline ? "✅" : "🛑"}</h1>
              {/* <span className="p-6 font-bold text-red-600">{user.name}</span> */}
         {islogin ? (
-          <button onClick={() => setlogin(false)}>Signout</button>
+          <button className="btn" onClick={() => setlogin(false)}>Signout</button>
         ) : (
-          <button onClick={() => setlogin(true)}>LogIn</button>
+          <button className="btn" onClick={() => setlogin(true)}>LogIn</button>
         )}
       </div>
     </div>

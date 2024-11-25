@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { img_cdn_url } from "../config";
 import Shimmer from "./shimmer";
 import useRestaurant from "../../utils/useRestaurant";
+import { addItem } from "../../utils/cartslice";
+import { useDispatch } from "react-redux";
 
 const RestauFood = () => {
   // how to read a dynamic url params
@@ -11,19 +13,13 @@ const RestauFood = () => {
   const { resid } = useParams(); // it is an hook, just an normal funtion
   // const [restaumenu, setrestaumenu] = useState({});
 
-  useEffect(() => {
-    getRestaurantInfo();
-  }, []);
+const restaumenu = useRestaurant(resid);
 
-  async function getRestaurantInfo() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9352403&lng=77.624532&restaurantId=63007&catalog_qa=undefined&submitAction=ENTER" + resid
-    );
-    const json = await data.json();
-    console.log(json);
-  }
+const dispatch = useDispatch()
 
-  const restaumenu = useRestaurant(resid);
+const addFooditem =  (item) =>{
+    dispatch(addItem (item));
+}
 
   return (
     <div className="menucard">
@@ -49,12 +45,16 @@ const RestauFood = () => {
           <h3>{restaumenu.cards[2]?.card?.card?.info?.costForTwoMessage}</h3>
           <h3>{restaumenu.cards[2]?.card?.card?.info?.locality}</h3>
         </div>
-        <div>
+
+
+        <div className="p-5">
           <h1 className="font-bold ">menu</h1>
           <ul>
             {restaumenu?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[3]?.card?.card?.itemCards?.map(
               (item) => (
-                <li key={item.card.info.id}>{item.card.info.name}</li>
+                <li className="gap-y-1" key={item.card.info.id}>{item.card.info.name}  - {" "}
+                <button className="p-1 bg-lime-300" onClick={() => addFooditem (item)}>Add</button>
+                </li>
               )
             )}
           </ul>

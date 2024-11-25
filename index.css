@@ -68,7 +68,7 @@ body {
   justify-content: center;
   gap: 10px;
 }
-.log-btn button{
+ .btn{
     width: 100px;
     font-size: medium;
     height: auto;
@@ -78,7 +78,7 @@ body {
     border: 1px solid rgb(233, 138, 59);
     transition: 0.4s;
 }
-button:hover {
+.btn:hover {
   color: black;
   box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
   background-color: rgb(223, 146, 44);
@@ -157,7 +157,7 @@ button:hover {
 .restauinfo {
   
   color: white;
-  margin: 30px;
+  margin: 20px;
   border-radius: 15px;
   border: 1px solid #ddd;
   background-color: black;
