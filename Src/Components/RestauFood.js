@@ -25,9 +25,6 @@ const normalizeItem = (info) => ({
 });
 
 const addFooditem = (item) => {
-  console.log("Item Passed to addFoodItem:", item);
-
-  // Normalize before dispatch
   const normalizedData = normalizeItem(item.card.info);
   dispatch(addItem(normalizedData));
 };
