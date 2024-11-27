@@ -1,3 +1,4 @@
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const cartslice = createSlice({
@@ -6,9 +7,17 @@ const cartslice = createSlice({
         items : []
     },
     reducers: {
-        addItem : (state, action) =>{
-            state.items.push(action.payload);
-        },
+        addItem: (state, action) => {
+            const newItem = action.payload;
+            state.items.push({
+              info: {
+                imageId : newItem.imageId || "",
+                name: newItem.name || "Unknown Food",
+                price: newItem.price || 0,
+                ratings: newItem.ratings || {},
+              },
+            });
+          },
 
         removeitems : (state, action) =>{
             state.items.pop();

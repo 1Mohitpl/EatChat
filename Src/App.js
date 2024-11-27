@@ -15,6 +15,7 @@ import Careers from "./Components/Careers";
 import InstaFresh from "./Components/Instamart";
 import {Provider} from "react-redux";
 import store from "../utils/store";
+import FoodCard from "./Components/Foodcard";
 
 
 

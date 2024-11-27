@@ -17,9 +17,21 @@ const restaumenu = useRestaurant(resid);
 
 const dispatch = useDispatch()
 
-const addFooditem =  (item) =>{
-    dispatch(addItem (item));
-}
+const normalizeItem = (info) => ({
+  cloudinaryImageId: info.cloudinaryImageId || "",
+  name: info.name || "Unknown Food",
+  price: info.price || 0,
+  ratings: info.ratings || {},
+});
+
+const addFooditem = (item) => {
+  console.log("Item Passed to addFoodItem:", item);
+
+  // Normalize before dispatch
+  const normalizedData = normalizeItem(item.card.info);
+  dispatch(addItem(normalizedData));
+};
+
 
   return (
     <div className="menucard">
@@ -38,8 +50,8 @@ const addFooditem =  (item) =>{
             {restaumenu?.cards[2]?.card?.card?.info?.name}
           </h1>
           <h3>{restaumenu?.cards[2]?.card?.card?.info?.areaName}</h3>
-          <span className=" font-bold ">
-            {restaumenu?.cards[2]?.card?.card?.info?.avgRatingString}
+          <span className=" font-bold " >
+            <h4>{restaumenu?.cards[2]?.card?.card?.info?.avgRatingString} ⭐ ratings</h4>
           </span>
           <h3>{restaumenu.cards[2]?.card?.card?.info?.city}</h3>
           <h3>{restaumenu.cards[2]?.card?.card?.info?.costForTwoMessage}</h3>
