@@ -59,7 +59,7 @@ const addFooditem = (item) => {
         <div className="p-5">
           <h1 className="font-bold ">menu</h1>
           <ul>
-            {restaumenu?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[3]?.card?.card?.itemCards?.map(
+            {restaumenu?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[7]?.card?.card?.itemCards?.map(
               (item) => (
                 <li className="gap-y-1" key={item.card.info.id}>{item.card.info.name}  - {" "}
                 <button className="p-1 bg-lime-300" onClick={() => addFooditem (item)}>Add</button>
