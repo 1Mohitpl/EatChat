@@ -1,4 +1,3 @@
-import logo from "/imgs/applogo.png";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../../utils/useOnline";
@@ -8,7 +7,7 @@ import store from "../../utils/store";
 
 const Title = () => (
   <a href="/">
-    <img
+    <img data-testid = "logo"
       className="logo"
       src="https://themes.muffingroup.com/be/recipes3/wp-content/uploads/2022/12/berecipes3.svg"
     />
@@ -54,13 +53,13 @@ const Header = () => {
             <li>Careers</li>
           </Link>
           <Link to="/cart">
-            <li>Cart {cartItems.length}</li>
+            <li data-testid = "cartTest">Cart {cartItems.length}</li>
           </Link>
         </ul>
       </div>
 
       <div className="log-btn">
-            <h1 className=" font-bold">Online status : {isOnline ? "✅" : "🛑"}</h1>
+            <h1 data-testid = "onlineStatus" className=" font-bold">Online status : {isOnline ? "✅" : "🛑"}</h1>
              {/* <span className="p-6 font-bold text-red-600">{user.name}</span> */}
         {islogin ? (
           <button className="btn" onClick={() => setlogin(false)}>Signout</button>
