@@ -53,7 +53,7 @@ const Header = () => {
           </Link>
         </ul>
       </div>
-
+    
       <div className="log-btn">
             <h1 data-testid = "onlineStatus" className=" font-bold">Online status : {isOnline ? "✅" : "🛑"}</h1>
              {/* <span className="p-6 font-bold text-red-600">{user.name}</span> */}
