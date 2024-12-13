@@ -1,8 +1,10 @@
 import { Outlet } from "react-router-dom";
-import ProfileClass from "./profileClass";
+// import ProfileClass from "./profileClass";
 import Profile from "./Profile";
 import React from "react";
 import { Component } from "react";
+import aboutimg from "../imgs/about.jpg"
+
 
 
 
@@ -22,17 +24,19 @@ class About extends Component{
         
         return (
             <>
-            <div className="items">
-            <h1>Get to Know us Better</h1>
-            <img src="https://themes.muffingroup.com/be/ecofood3/wp-content/uploads/2024/02/ecofood3-about-pic1.webp" ></img>
-            <Outlet />
-            <Profile  address = {"kolkata"} />
-            <ProfileClass name = {"first child"} />
-            {/* <ProfileClass name = {"second child"} />     */}
+            <div className="about-container">
+                <div className="text-content">
+                    <h1 className="main-heading">Get to Know Us Better</h1>
+                    <h2 className="sub-heading">"More than meals, we serve experiences"</h2>
+                </div>
+                <Outlet/>
+                <div className="image-content">
+                    <img src={aboutimg} alt="about-img" className="about-img" />
+                </div>
             </div>
-            </>
+        </>
+        
         )
-
     }
 }
 

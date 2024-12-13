@@ -14,8 +14,6 @@ const Title = () => (
   </a>
 );
 const Header = () => {
-  // let title = "Eat&chat";
-  // const [title, setTitle] = useState("Eat&Chat");
   const [islogin, setlogin] = useState(false);
 
   const isOnline = useOnline();
@@ -30,8 +28,6 @@ const Header = () => {
     <div className="header">
       {/* <h3>Eat&chat</h3> */}
       <Title />
-      {/* <h1> {title}</h1>
-     <button onClick={() => setTitle("foodVila" )}>click</button> */}
       <div className="nave-items">
         <ul>
           <Link to="/">
@@ -53,7 +49,7 @@ const Header = () => {
             <li>Careers</li>
           </Link>
           <Link to="/cart">
-            <li data-testid = "cartTest">Cart {cartItems.length}</li>
+            <li data-testid = "cartTest">My-Cart {cartItems.length}</li>
           </Link>
         </ul>
       </div>
