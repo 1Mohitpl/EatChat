@@ -26,7 +26,7 @@ body {
   justify-content: space-between;
   padding: 10px 30px;
   border-bottom: 2px solid  white;
-  background-color: rgb(220, 156, 124);   /*Sleek blue tone*/
+  background-color: whitesmoke;   /*Sleek blue tone*/
 }
 
 /* .header:hover {

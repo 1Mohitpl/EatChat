@@ -25,7 +25,7 @@ const Header = () => {
 
 
   return (
-    <div className="header">
+    <div className="header shadow-inner">
       {/* <h3>Eat&chat</h3> */}
       <Title />
       <div className="nave-items">
@@ -49,6 +49,7 @@ const Header = () => {
             <li>Careers</li>
           </Link>
           <Link to="/cart">
+          
             <li data-testid = "cartTest">My-Cart {cartItems.length}</li>
           </Link>
         </ul>
