@@ -1,5 +1,6 @@
 const Order = require("../models/Order");
 const logger = require("../config/logger");
+const { publishOrderCompleted } = require("../config/kafka");
 
 // @desc    Place an order (belongs to the logged-in user)
 // @route   POST /api/orders
@@ -35,6 +36,7 @@ const createOrder = async (req, res, next) => {
       paymentMethod,
     });
     logger.info(`Order ${order.id} placed by ${req.user.email || req.user.id}`);
+    publishOrderCompleted(order, req.user);
 
     res.status(201).json({ success: true, order });
   } catch (error) {
