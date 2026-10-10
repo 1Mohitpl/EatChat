@@ -7,8 +7,16 @@ const { combine, timestamp, printf, colorize, json } = winston.format;
 
 const logDir = process.env.LOG_DIR || "logs";
 
-if (!fs.existsSync(logDir)) {
-  fs.mkdirSync(logDir, { recursive: true });
+// Vercel's filesystem is read-only except /tmp — file logs are best-effort only.
+let fileLogging = false;
+try {
+  if (!fs.existsSync(logDir)) {
+    fs.mkdirSync(logDir, { recursive: true });
+  }
+  fs.accessSync(logDir, fs.constants.W_OK);
+  fileLogging = process.env.NODE_ENV !== "production";
+} catch (e) {
+  fileLogging = false;
 }
 
 const consoleFormat = combine(
@@ -28,15 +36,19 @@ const fileFormat = combine(
 const logger = winston.createLogger({
   level: process.env.NODE_ENV === "production" ? "info" : "debug",
   transports: [
-    new winston.transports.File({
-      filename: path.join(logDir, "error.log"),
-      level: "error",
-      format: fileFormat,
-    }),
-    new winston.transports.File({
-      filename: path.join(logDir, "combined.log"),
-      format: fileFormat,
-    }),
+    ...(fileLogging
+      ? [
+          new winston.transports.File({
+            filename: path.join(logDir, "error.log"),
+            level: "error",
+            format: fileFormat,
+          }),
+          new winston.transports.File({
+            filename: path.join(logDir, "combined.log"),
+            format: fileFormat,
+          }),
+        ]
+      : []),
     new winston.transports.Console({ format: consoleFormat }),
   ],
   exitOnError: false,
