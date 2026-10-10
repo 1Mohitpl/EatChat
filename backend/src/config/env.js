@@ -43,7 +43,10 @@ if (errors.length > 0) {
   console.error(
     "\nGenerate a secret with: node -e \"console.log(require('crypto').randomBytes(48).toString('hex'))\""
   );
-  process.exit(1);
+  // ponytail: exiting is for long-running servers; serverless must stay alive so healthy routes still serve.
+  if (!process.env.VERCEL) {
+    process.exit(1);
+  }
 }
 
 module.exports = {

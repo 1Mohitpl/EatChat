@@ -3,10 +3,16 @@ const logger = require("./logger");
 
 if (!process.env.DATABASE_URL) {
   logger.error("DATABASE_URL is not set (add the Neon connection string to backend/.env)");
-  process.exit(1);
+  // ponytail: exiting is for long-running servers; serverless must stay alive so healthy routes still serve.
+  if (!process.env.VERCEL) {
+    process.exit(1);
+  }
 }
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+// Idle-client errors are otherwise uncaught and crash serverless functions.
+pool.on("error", (err) => logger.error(`Neon pool error: ${err.message}`));
 
 const connectDB = async () => {
   try {
@@ -53,7 +59,10 @@ const connectDB = async () => {
     logger.info(`Neon Postgres connected: ${rows[0].db}`);
   } catch (error) {
     logger.error(`Neon Postgres connection failed: ${error.message}`);
-    process.exit(1);
+    // ponytail: exiting is for long-running servers; serverless must stay alive so healthy routes still serve.
+    if (!process.env.VERCEL) {
+      process.exit(1);
+    }
   }
 };
 
