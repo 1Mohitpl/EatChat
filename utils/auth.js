@@ -1,4 +1,6 @@
-export const API_BASE_URL = "http://localhost:5000/api";
+export const API_BASE_URL =
+  (typeof process !== "undefined" && process.env && process.env.BEYUUMI_API_URL) ||
+  "http://localhost:5000/api";
 
 const TOKEN_KEY = "beyuumi_token";
 const USER_KEY = "beyuumi_user";

@@ -53,7 +53,7 @@ button:focus-visible {
   z-index: 1000;
 
   min-height: 64px;
-  background: white;
+  background: rgb(250, 243, 240);
 
   display: flex;
   align-items: center;
